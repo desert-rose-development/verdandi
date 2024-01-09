@@ -28,21 +28,22 @@ const Navbar = ({ toggle }: { toggle: () => void }) => {
                             </svg>
                         </button>
                         <ul className="hidden md:flex gap-x-6 text-white ">
-                            <li>
-                                <Link href="/about">
-                                    <p>About Us</p>
-                                </Link>
-                            </li>
-                            <li>
+                        <li>
                                 <Link href="/user/1">
                                     <p>User Profile</p>
                                 </Link>
                             </li>
                             <li>
+                                <Link href="/about">
+                                    <p>About Us</p>
+                                </Link>
+                            </li>
+                            
+                            {/* <li>
                                 <Link href="/login">
                                     <p>Login</p>
                                 </Link>
-                            </li>
+                            </li> */}
                         </ul>
                         <div className="hidden md:block">
                             <Button />
