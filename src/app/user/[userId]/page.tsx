@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import UserDetails from '@/components/UserDetails';
+import UserDetails from '@/components/user/UserDetails';
 
 const User = ({ params }: { params: { userId: string } }) => {
     return (
@@ -12,6 +12,10 @@ const User = ({ params }: { params: { userId: string } }) => {
             </div>
             <Link href={`${params.userId}/watchlist`}>
                 Watchlist
+            </Link>
+            <br />
+            <Link href={`${params.userId}/friendslist`}>
+                Friendslist
             </Link>
         </div >
     );
