@@ -1,6 +1,6 @@
 // import Image from 'next/image'
 // import Link from 'next/link'
-import DashboardDetails from '@/components/dashboard/DashboardDetails'
+import DashboardDetails from '@/components/dashboard/DashboardDetails';
 
 export default function Home() {
   return (
@@ -115,5 +115,5 @@ export default function Home() {
       <Link href="/login">Login</Link>
       <Link href="/about">About</Link> */}
     </main>
-  )
+  );
 }
