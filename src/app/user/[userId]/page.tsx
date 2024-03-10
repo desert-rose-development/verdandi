@@ -1,14 +1,23 @@
 import Link from 'next/link';
 import UserDetails from '@/components/user/UserDetails';
-import { getUser, getUserFollowingList } from '@/app/user/[userId]/userActions';
+import {
+  getUser,
+  getAllUsers,
+  getUserFollowingList,
+  followUser,
+} from '@/app/user/[userId]/userActions';
+import UserList from './UserList';
 import FollowingList from './FollowingList';
+import { revalidatePath } from 'next/cache';
 
 export default async function UserPage({
   params,
 }: {
   params: { userId: string };
 }) {
+  const users = await getAllUsers();
   const user = await getUser(params.userId);
+
   const followingUsers = await getUserFollowingList(params.userId);
   return (
     <div>
@@ -18,13 +27,16 @@ export default async function UserPage({
       <div>
         <UserDetails />
       </div>
+      <div>
+        <UserList currentUser={user} users={users} />
+      </div>
       <Link
         className=" hover:bg-blue-700 font-bold py-2 px-4 rounded"
         href={`${params.userId}/edit`}
       >
         Edit User
       </Link>
-      <FollowingList followedUsers={followingUsers} />
+      <FollowingList currentUser={user} followedUsers={followingUsers} />
     </div>
   );
 }
