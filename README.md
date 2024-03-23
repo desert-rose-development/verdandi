@@ -5,6 +5,11 @@ Install Node JS [here](https://nodejs.org/en)
 
 
 ## Getting Started
+Install the dependencies
+```
+npm install
+```
+
 
 First, run the development server:
 
