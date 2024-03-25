@@ -1,4 +1,3 @@
-// lib/db.ts
 import { Pool, QueryResult } from "pg";
 
 const pool = new Pool({
